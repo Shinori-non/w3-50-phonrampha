@@ -1,50 +1,40 @@
 import { View,Text,Button,StyleSheet, TextInput } from "react-native";
 import { useState } from "react";
-import { useRouter } from "expo-router";
-
-const router = useRouter()
+import { useRouter } from "expo-router"; 
+const router = useRouter()   
 
 export default function Square(){
     // พท.สี่เหลี่ยม = กว้าง * ยาว
     // output = input * input
     //   50   =  5 * 10
     const [width, setWidth] = useState(0) // width = 20, setWidth(20)
-    const [lenght, setLenght] = useState(0)
     const [area, setArea] = useState(0)
 
     function calSquare(){
-        let result = width * lenght
+        let result = width / 28.3495
         setArea(result)
     }    
 
     return(
         <View style={styles.container}>
-            <Text style={styles.mainTitle}>คำนวณพื้นที่สี่เหลี่ยม</Text>
+            <Text style={styles.mainTitle}>คำนวณกรัมเป็นออนซ์</Text>
             {/* <Button title="กลับหน้าแรก" /> */}
 
-            <Text>กว้าง {width} ซม. ยาว {lenght} ซม. พื้นที่คือ {area} ตร.ซฒ. </Text>
+            <Text>กรัมคือ {width}   ออนซ์คือ {area}  </Text>
 
             <TextInput 
                 style={styles.textInput} 
-                placeholder="กรอกความกว้าง" 
+                placeholder="กรอกกรัม" 
                 value={width.toString()}
                 onChangeText={(w) => setWidth(Number(w)) }
                 
             />
-            <TextInput 
-                value={lenght.toString()}
-                onChangeText={(l) => setLenght(Number(l))}
-                style={styles.textInput} 
-                placeholder="กรอกความยาว"
-            />
 
             <Button title="คำนวณ" onPress={() => calSquare() } />
-
-             <Button title="ไปหน้า1" onPress={() => router.navigate('/')} />
+            <Button title="ไปหน้า1" onPress={() => router.navigate('/')} />
         </View>
     )
 }
-
 const styles = StyleSheet.create({
     container:{
         flex: 1,
