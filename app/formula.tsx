@@ -31,14 +31,14 @@ export default function Square(){
             />
 
             <Button title="คำนวณ" onPress={() => calSquare() } />
-            <Button title="ไปหน้า1" onPress={() => router.navigate('/')} />
+            <Button title="ไปหน้าหลัก" onPress={() => router.navigate('/')} />
         </View>
     )
 }
 const styles = StyleSheet.create({
     container:{
         flex: 1,
-        backgroundColor:"white",
+        backgroundColor:'#AFD7F6',
         justifyContent:"center",
         alignItems:"center",
         gap: 20

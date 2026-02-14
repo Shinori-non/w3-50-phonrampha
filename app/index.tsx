@@ -8,8 +8,9 @@ export default function App(){
     return(
         <View style={styles.container}>
             <Text style={styles.mainTitle}>ยินดีต้อนรับคับ </Text>
-            <Button title="ไปหน้าที่ 2" onPress={() => router.navigate('/square')} />
-            <Button title="ไปหน้าที่ 3" onPress={() => router.navigate('/formula')} />
+            <Button title="ไปหน้าคำนวณพื้นที่สี่เหลี่ยม" onPress={() => router.navigate('/square')} />
+
+            <Button title="ไปหน้าคำนวณกรัมเป็นออนซ์" onPress={() => router.navigate('/formula')} />
         </View>
     )
 }
@@ -19,10 +20,16 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor:"lightsalmon",
         justifyContent:"center",
-        alignItems:"center"
+        alignItems:"center",
+        gap: 20
     },
     mainTitle:{
         fontSize:20,
         fontWeight:"700"
+    },
+    Button:{
+        borderWidth: 1,
+        width: "80%",
+        borderColor:"green"
     }
 })
